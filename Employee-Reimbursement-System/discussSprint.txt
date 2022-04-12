@@ -1,0 +1,40 @@
+User Detail -- mapping -- >
+	-user name
+	-user password
+	-(fk) employeeId
+
+	
+Employee -- mapping -- > 
+	- employeeId(pk)
+	- employeeName
+	- employeeEmail
+	- (forigen key) requestId
+	- role 
+			-financeManager {request id = null}
+			-employee
+	----------------------------
+	generalEmployee
+		- Add request
+		- View request
+		- delete request
+	financeManager
+		- view request
+		- update request 
+	-----------------------------
+
+Request / expense Details -- mapping --> 
+	
+	-requestId(pk)(auto generated)
+	-employeeId(fk)
+	-requestStatus
+			-new
+			-inprogress
+			-approved
+			-rejected/denied {reason also}
+	-requestStatus update Date(Date change)
+	-requestDescription
+	-requestAmount
+	-requestDate
+	-remark (by financemanager)
+
+
